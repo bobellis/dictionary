@@ -18,4 +18,12 @@ attr_reader(:spelling, :word_id)
     @@words
   end
 
+  define_method(:add_definition) do |definition|
+    @definitions.push(definition)
+  end
+
+  define_method(:get_definitions) do
+    @definitions
+  end
+
 end
