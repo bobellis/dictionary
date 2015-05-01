@@ -17,6 +17,15 @@ describe(Word) do
         expect(test_word.spelling()).to(eq('test'))
       end
     end
+    describe('get_definitions') do
+      it('will return an array of definitions associated with a word') do
+        test_word = Word.new('test')
+        test_word.save()
+        test_definition = Def.new('this is a test')
+        test_word.add_definition(test_definition)
+        expect(test_word.get_definitions()).to(eq([test_definition]))
+      end
+    end
 
 end
 
