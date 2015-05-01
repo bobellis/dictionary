@@ -2,9 +2,14 @@ require('./lib/definition')
 require('./lib/word')
 require('sinatra')
 require('sinatra/reloader')
-also_reload('lib/**/*.rb')
 require('pry')
+also_reload('lib/**/*.rb')
+
 
 get('/') do
   erb(:index)
+end
+
+get('/add_word') do
+  erb(:add_word)
 end
