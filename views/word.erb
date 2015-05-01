@@ -1,1 +1,15 @@
-<h3> Here is your word </h3>
+ <h3> Word: <%= @word.spelling() %> </h3>
+
+ <ul>
+   <% @defs.each do |definition| %>
+   <li> <b><%= definition.def_details() %></b> </li>
+   <% end %>
+ </ul>
+
+ <form action='/add_definition' method='post'>
+   <input id="word_id" name="word_id" type="hidden" value="<%= @word.word_id() %>">
+
+   <label for='new_def'> Add Definition: </label>
+   <input type='text' id='new_definition' name='new_definition' class='form-control'>
+   <button type='submit' class='btn btn-success'> Save Definition </button>
+ </form>
