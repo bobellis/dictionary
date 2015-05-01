@@ -1,3 +1,13 @@
 <h3> Welcome to the dictionary </h3>
 
+<ul>
+  <% if Word.all().length > 0 %>
+      <% @words.each do |word| %>
+        <li> <%= word.spelling %>
+      <% end %>
+    <% end %>
+</ul>
+
+
 <a href='/add_word' role=button class='btn btn-success'> Add Word </a>
+<a href='/clear_dictionary' role=button class='btn btn-danger'> Delete Dictionary </a> 

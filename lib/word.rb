@@ -14,16 +14,20 @@ attr_reader(:spelling, :word_id)
     @@words.push(self)
   end
 
-  define_singleton_method(:all) do
-    @@words
-  end
-
   define_method(:add_definition) do |definition|
     @definitions.push(definition)
   end
 
   define_method(:get_definitions) do
     @definitions
+  end
+
+  define_singleton_method(:all) do
+    @@words
+  end
+
+  define_singleton_method(:clear) do
+    @@words = []
   end
 
 end
