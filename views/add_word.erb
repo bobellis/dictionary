@@ -1,1 +1,10 @@
-<h3> Add a word! </h3> 
+<h3> Add a word! </h3>
+
+<form action='/save_word' method='post'>
+  <label for='word_spelling'> Word: </label>
+  <input type='text' id='word_spelling' name='word_spelling' class='form-control'>
+  <label for='word_def'> Definition: </label>
+  <input type='text' id='word_def' name='word_def' class='form-control'>
+
+  <button type='submit' class='btn btn-success'> Save Word </button>
+</form>

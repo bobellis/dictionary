@@ -13,3 +13,7 @@ end
 get('/add_word') do
   erb(:add_word)
 end
+
+post('/save_word') do
+erb(:index)
+end
