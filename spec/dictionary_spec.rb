@@ -3,6 +3,11 @@ require ('word')
 require ('definition')
 
 describe(Word) do
+
+  before do
+    Word.clear()
+  end
+  
     describe('#save') do
       it('will save a new word object into the array of words') do
         test_word = Word.new('test')
@@ -24,6 +29,13 @@ describe(Word) do
         test_definition = Def.new('this is a test')
         test_word.add_definition(test_definition)
         expect(test_word.get_definitions()).to(eq([test_definition]))
+      end
+    end
+    describe('.find') do
+      it('will return a word by id') do
+        test_word = Word.new('test')
+        test_word.save()
+        expect(Word.find(1)).to(eq(test_word))
       end
     end
 

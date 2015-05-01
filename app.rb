@@ -30,3 +30,9 @@ get('/clear_dictionary') do
   Word.clear()
   erb(:index)
 end
+
+get('/word/:id') do
+  @word = Word.find(params.fetch('id').to_i())
+  @defs = @word.get_definitions()
+  erb(:word)
+end

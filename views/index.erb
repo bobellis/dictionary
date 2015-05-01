@@ -3,11 +3,11 @@
 <ul>
   <% if Word.all().length > 0 %>
       <% @words.each do |word| %>
-        <li> <%= word.spelling %>
+        <li> <a href='word/<%= word.word_id() %>'><%= word.spelling %> </a></li> 
       <% end %>
     <% end %>
 </ul>
 
 
 <a href='/add_word' role=button class='btn btn-success'> Add Word </a>
-<a href='/clear_dictionary' role=button class='btn btn-danger'> Delete Dictionary </a> 
+<a href='/clear_dictionary' role=button class='btn btn-danger'> Delete Dictionary </a>

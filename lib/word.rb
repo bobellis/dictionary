@@ -33,12 +33,10 @@ attr_reader(:spelling, :word_id)
   define_singleton_method(:find) do |id|
     found_word = ''
     @@words.each do |word|
-      if word.word_id = id
+      if word.word_id() == id
         found_word = word
       end
     end
     found_word
   end
-
-
 end
