@@ -39,7 +39,10 @@ end
 
 post('/add_definition') do
   @word = Word.find(params.fetch('word_id').to_i())
-  @new_definition = Def.new(params.fetch('new_definition'))
-  @word.add_definition(@new_definition)
+  if params.fetch('new_definition') != ''
+    @new_definition = Def.new(params.fetch('new_definition'))
+    @word.add_definition(@new_definition)
+  end
+  @defs = @word.get_definitions()
   erb(:word)
 end
