@@ -1,6 +1,8 @@
 class Word
 
 @@words = []
+attr_reader(:spelling, :word_id)
+
 
   define_method(:initialize) do |spelling|
     @spelling = spelling

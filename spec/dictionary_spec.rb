@@ -20,10 +20,10 @@ describe(Word) do
 
 end
 
-describe (Definition) do
+describe (Def) do
     describe('#def_details') do
       it('will return the details of a definition') do
-        test_definition = Definition.new('this is a test')
+        test_definition = Def.new('this is a test')
         expect(test_definition.def_details()).to(eq('this is a test'))
       end
     end
